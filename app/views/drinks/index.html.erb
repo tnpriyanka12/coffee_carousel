@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Drinks</h1>
-
 <div id="carousel-example-generic" class="carousel slide text-center" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -19,15 +16,17 @@
         <div class="carousel-caption">
         <%= @drinks.first.description %>
         </div>
-      </div>
+    </div>
 
-      <% @drinks.each do |drink| %>
+    <% @drinks.each do |drink| %>
+      <% if !(@drinks.first == drink) %>
         <div class="item">
           <img class="img-responsive center-block" src="<%= drink.picture %>" alt="">
           <div class="carousel-caption">
             <%= drink.description %>
           </div>
         </div>
+        <% end %>
      <% end %>
 
     </div>
