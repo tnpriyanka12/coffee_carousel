@@ -1,0 +1,17 @@
+<h1>Login</h1>
+<div style = "color:red; font-size:20px">
+<%=flash[:error]%>
+</div>
+
+
+<%= form_tag login_path do %>
+
+  <%= label_tag :email %>
+  <%= email_field_tag :email, nil %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password, nil %>
+
+  <%= submit_tag 'Login' %>
+
+<% end %>
