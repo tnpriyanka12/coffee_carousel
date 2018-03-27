@@ -5,6 +5,9 @@ class DrinksController < ApplicationController
   # GET /drinks.json
   def index
     @drinks = Drink.all
+    if !@current_user
+      redirect_to login_path
+    end 
   end
 
   # GET /drinks/1

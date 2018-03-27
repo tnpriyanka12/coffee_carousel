@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IE</title>
+    <title>iExpresso</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -25,18 +25,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li><%= link_to("Sign Up", new_user_path ) %></li>
-                    <li><%= link_to("Sign In", login_path ) %></li>
-                    <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <% if @current_user.present? %>
+                      <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
+                  <% else %>
+                      <li><%= link_to("Log In", login_path ) %></li>
+                  <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -46,6 +42,11 @@
     <div class="jumbotron text-center">
       <h1>Impresso Espresso</h1>
       <p class="jheading">The one stop place for all the impressive information about Espressos</p>
+        <% if @current_user.present? %>
+          Welcome, <%= @current_user.name %>
+        <% else %>
+          New User? <%= link_to("SignUp Here", new_user_path ) %>
+      <% end %>
     </div>
 
     <%= yield %>
