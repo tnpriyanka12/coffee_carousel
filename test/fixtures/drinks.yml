@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  milk: MyString
+  water: MyString
+  froth: MyString
+  picture: MyText
+  description: MyText
+
+two:
+  name: MyString
+  milk: MyString
+  water: MyString
+  froth: MyString
+  picture: MyText
+  description: MyText
