@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', "rails.validations" %>
 
   </head>
@@ -27,9 +26,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li><a href="#contact">Contact</a></li>
                   <li><a href="<%= root_path%>">Photos</a></li>
                   <li><a href="<%= video_path%>">Videos</a></li>
+                  <li><a href="#contact">Contact</a></li>
 
                   <% if @current_user.present? %>
                       <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
@@ -38,11 +37,7 @@
                   <% end %>
                 </ul>
             </div>
-            <% if @current_user.present? %>
-              Welcome, <%= @current_user.name %>
-            <% else %>
-              New User? <%= link_to("SignUp Here", new_user_path ) %>
-            <% end %>
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -59,17 +54,14 @@
 
     <%= yield %>
 
-
-
-
         <div id="contact" class="container-fluid bg-grey">
           <h2 class="text-center">CONTACT</h2>
           <div class="row">
             <div class="col-sm-5">
-              <p>Contact</p>
+              <p><u>Get in Touch</u></p>
               <p><span class="glyphicon glyphicon-map-marker"></span> Sydney, Australia</p>
-              <p><span class="glyphicon glyphicon-phone"></span> +00 000000000</p>
-              <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+              <p><span class="glyphicon glyphicon-phone"></span> Available on Request</p>
+              <p><span class="glyphicon glyphicon-envelope"></span> tnpriyanka12@gmail.com</p>
             </div>
           </div>
         </div>

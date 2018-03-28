@@ -16,6 +16,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
  body {
      padding-top: 65px;
      font-family: 'Josefin Sans', sans-serif;
@@ -27,18 +29,33 @@
      text-shadow: none !important;
      color: #474545 !important;
  }
- .jumbotron
- {
-     padding-top: 0px;
-     padding-bottom:0px;
-     background-image:url('coffee.jpg');
-     background-size: cover;
-     background: contain;
-     width: 100%;
-     height: 100px;
-     max-width:1400px;
-     color: white;
+
+ .carasoul-inner{
+   position: relative;
+   top: 100px;
+ }
+
+ #carousel-container {
+     background-image: url('http://portfoliotheme.org/enigmatic/wp-content/uploads/sites/9/2012/07/placeholder1.jpg');
+   background-size:cover;
+   height:100%;
+   width:100%;
+   position: absolute;
+ }
+ 
+ .jumbotron {
+   padding-top: 0px;
+   padding-bottom:0px;
+   background-image:url('coffee.jpg');
+   background-size: cover;
+   background: contain;
+   width: 100%;
+   height: 100px;
+   max-width:1400px;
+   color: white;
   }
+
+
 img {
   height: 300px;
   width: 500px;
