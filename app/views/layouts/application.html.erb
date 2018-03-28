@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>iEspresso</title>
+    <title>iExpresso</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application','data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', "rails.validations" %>
 
   </head>
@@ -31,6 +32,7 @@
                   <li><a href="#contact">Contact</a></li>
 
                   <% if @current_user.present? %>
+                      <li><a href="<%= user_path(@current_user) %>">Profile</a></li>
                       <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
                   <% else %>
                       <li><%= link_to("Log In", login_path ) %></li>
@@ -54,6 +56,8 @@
 
     <%= yield %>
 
+
+<hr>
         <div id="contact" class="container-fluid bg-grey">
           <h2 class="text-center">CONTACT</h2>
           <div class="row">

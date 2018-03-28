@@ -16,7 +16,7 @@ class DrinksController < ApplicationController
       redirect_to login_path
     end
   end
-  
+
   # GET /drinks/1
   # GET /drinks/1.json
   def show
@@ -29,13 +29,15 @@ class DrinksController < ApplicationController
 
   # GET /drinks/1/edit
   def edit
+    @drink = Drink.find params[:id]
+
   end
 
   # POST /drinks
   # POST /drinks.json
   def create
     @drink = Drink.new(drink_params)
-
+    @drink.user_id = @current_user.id
     respond_to do |format|
       if @drink.save
         format.html { redirect_to @drink, notice: 'Drink was successfully created.' }
@@ -50,6 +52,7 @@ class DrinksController < ApplicationController
   # PATCH/PUT /drinks/1
   # PATCH/PUT /drinks/1.json
   def update
+    @drink = Drink.find params[:id]
     respond_to do |format|
       if @drink.update(drink_params)
         format.html { redirect_to @drink, notice: 'Drink was successfully updated.' }
@@ -79,6 +82,6 @@ class DrinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def drink_params
-      params.require(:drink).permit(:name, :milk, :water, :froth, :picture, :description)
+      params.require(:drink).permit(:name, :milk, :espresso, :froth, :picture, :video_id, :description)
     end
 end

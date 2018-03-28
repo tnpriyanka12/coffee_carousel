@@ -35,14 +35,13 @@
    top: 100px;
  }
 
- #carousel-container {
-     background-image: url('http://portfoliotheme.org/enigmatic/wp-content/uploads/sites/9/2012/07/placeholder1.jpg');
-   background-size:cover;
-   height:100%;
-   width:100%;
-   position: absolute;
- }
- 
+ // .carousel{
+ //     background-image: url('https://png.pngtree.com/thumb_back/fw800/back_pic/03/76/03/5457be57e4ca443.jpg');
+ //     background-size:cover;
+ //     height:100%;
+ //     width:100%;
+ // }
+
  .jumbotron {
    padding-top: 0px;
    padding-bottom:0px;
@@ -59,6 +58,10 @@
 img {
   height: 300px;
   width: 500px;
-  padding-top: 50px;
   text-align: center;
+}
+
+.user-image{
+  height: 100px;
+  width: 100px;
 }

@@ -5,8 +5,11 @@
   <!-- Wrapper for slides -->
   <%= link_to 'Add a New Espresso to this list?? Click Here', new_drink_path , class:"text-center carasoul-top" %>
 
+
     <div class="carousel-inner" role="listbox">
       <div class="item active">
+        <h1><%= @drinks.first.name %></h1>
+
         <img class="img-responsive center-block" src="<%= @drinks.first.picture %>" alt="">
         <div class="carousel-caption">
         <%= @drinks.first.description %>
@@ -16,6 +19,8 @@
     <% @drinks.each do |drink| %>
       <% if !(@drinks.first == drink) %>
         <div class="item">
+          <h1><%= drink.name %></h1>
+
           <img class="img-responsive center-block" src="<%= drink.picture %>" alt="">
           <div class="carousel-caption">
             <%= drink.description %>
@@ -23,6 +28,7 @@
         </div>
         <% end %>
      <% end %>
+
 
     </div>
 
@@ -39,5 +45,3 @@
 
 
 <br>
-
-<%= link_to 'New Drink', new_drink_path %>
