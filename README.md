@@ -3,24 +3,24 @@
 Live Site Link: https://iespresso.herokuapp.com/
 
 Fork:
-# Fork this repository
+### Fork this repository
 
-# Do a rails db:create, rails db:migrate, rails db:seed
+### Do a rails db:create, rails db:migrate, rails db:seed
 
-# You need to login to see page contents
-# Sign Up checks for passwords, valid usernames, names, expects a certain format for e-mails, phone-numbers etc.
-#After Login, You can ADD 'Drinks' which gets saved to appropriate current_user
-# You can see your drink contributions (drinks that you have added ) in ur Profile page.
-# You can modify each drink that You have added .
+### You need to login to see page contents
+### Sign Up checks for passwords, valid usernames, names, expects a certain format for e-mails, phone-numbers etc.
+### After Login, You can ADD 'Drinks' which gets saved to appropriate current_user
+### You can see your drink contributions (drinks that you have added ) in ur Profile page.
+### You can modify each drink that You have added .
 
 
-# Login with Test User details
-#Test User mail:
+### Login with Test User details
+### Test User mail:
 Username: user1@mail.com
 Password: Chicken1234
 # OR
-# Create a login - but u need to create ur drinks with valid image links.
-# Run a test with Test User details for better understanding
+### Create a login - but u need to create ur drinks with valid image links.
+### Run a test with Test User details for better understanding
 
 
 ### Requirements done
