@@ -2,11 +2,11 @@
 <%=flash[:error]%>
 </div>
 
-<%= form_for @user , html: {multipart: true} do |form| %>
+<%= form_for @user ,:validate => true  do |form| %>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name%>
   </div>
 
   <div class="field">

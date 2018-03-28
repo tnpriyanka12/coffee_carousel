@@ -1,5 +1,19 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :check_if_logged_in, except: [:new, :create]
+  #
+  # before_action :check_user_id, except: [:new, :create]
+
+  # find out which user's page it is
+  # compare the user's page with current user
+  def check_user_id
+    @user = User.find params[:id]
+    unless @current_user == @user
+      flash[:error] = "You must be authorised to view this page."
+      redirect_to @current_user
+    end
+  end
+
 
   # GET /users
   # GET /users.json
@@ -55,12 +69,20 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-  
+    respond_to do |format|
+        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+        format.json { head :no_content }
+      end
   end
 
   private
-  def user_params
-    params.require(:user).permit(:username, :full_name, :email, :description, :password, :password_confirmation)
-  end
+  # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    def user_params
+      params.require(:user).permit(:name, :email, :description, :password, :password_confirmation)
+    end
 
 end

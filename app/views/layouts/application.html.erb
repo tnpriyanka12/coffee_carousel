@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', "rails.validations" %>
+
   </head>
 
   <body>
@@ -25,8 +27,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#services">Services</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <% if @current_user.present? %>
                       <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
@@ -35,10 +35,16 @@
                   <% end %>
                 </ul>
             </div>
+            <% if @current_user.present? %>
+              Welcome, <%= @current_user.name %>
+            <% else %>
+              New User? <%= link_to("SignUp Here", new_user_path ) %>
+            <% end %>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
     <div class="text-center">
       <h1>Impresso Espresso</h1>
         <% if @current_user.present? %>
@@ -49,5 +55,21 @@
     </div>
 
     <%= yield %>
+
+
+
+
+        <div id="contact" class="container-fluid bg-grey">
+          <h2 class="text-center">CONTACT</h2>
+          <div class="row">
+            <div class="col-sm-5">
+              <p>Contact</p>
+              <p><span class="glyphicon glyphicon-map-marker"></span> Sydney, Australia</p>
+              <p><span class="glyphicon glyphicon-phone"></span> +00 000000000</p>
+              <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+            </div>
+          </div>
+        </div>
+
   </body>
 </html>
