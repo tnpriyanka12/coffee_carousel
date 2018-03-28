@@ -22,17 +22,23 @@
 
 <h2> Your Contribution to Drinks </h2>
 <div class="list-group">
-<% @user.drinks.each do |drink| %>
 
 
-  <a href="<%= drink_path(drink) %>" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-        <h4><%= drink.name %></h4>
-      <small class="text-muted">3 days ago</small>
-    </div>
-    <p class="mb-1"><img class="user-image img-circle" src="<%= drink.picture %>" alt=""></p>
-    <small class="text-muted"><%= drink.description %></small>
-  </a>
-
-<% end %>
+  <!-- If user has not contributed anything yet -->
+  <% if @user.drinks.length == 0 %>
+    <small class="text-muted">You have not made any contributions... </small>
+    <br>
+    <%= link_to 'Click to Contribute',  new_drink_path, class:"btn btn-default" %>
+  <% else %>
+      <% @user.drinks.each do |drink| %>
+        <a href="<%= drink_path(drink) %>" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+              <h4><%= drink.name %></h4>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1"><img class="user-image img-circle" src="<%= drink.picture %>" alt=""></p>
+          <small class="text-muted"><%= drink.description %></small>
+        </a>
+        <% end %>
+   <% end %>
 </div>

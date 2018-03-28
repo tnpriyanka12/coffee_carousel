@@ -2,17 +2,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :check_if_logged_in, except: [:new, :create]
   #
-  # before_action :check_user_id, except: [:new, :create]
+  before_action :check_user_id, only: [:index]
 
   # find out which user's page it is
   # compare the user's page with current user
-  def check_user_id
-    @user = User.find params[:id]
-    unless @current_user == @user
-      flash[:error] = "You must be authorised to view this page."
-      redirect_to @current_user
-    end
-  end
+
 
 
   # GET /users
@@ -79,6 +73,14 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def check_user_id
+      # @user = User.find params[:id]
+      unless @current_user == @user
+        flash[:error] = "You must be authorised to view this page."
+        redirect_to @current_user
+      end
     end
 
     def user_params
