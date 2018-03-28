@@ -16,19 +16,22 @@
 
         <div class="carousel-caption">
         <%= @drinks.first.name %>
+
+        <%=@drinks.second.video_id%>
+        <br/>
         </div>
     </div>
 
-    <!-- <% @drinks.each do |drink| %>
+    <% @drinks.each do |drink| %>
       <% if !(@drinks.first == drink) %>
         <div class="item">
-          <img class="img-responsive center-block" src="<%= drink.picture %>" alt="">
+          <iframe class="drinksvideo" width="560" height="315" src="https://www.youtube.com/embed/<%=drink.video_id%>?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <div class="carousel-caption">
-            <%= drink.description %>
+            <%= drink.name %>
           </div>
         </div>
         <% end %>
-     <% end %> -->
+     <% end %>
 
     </div>
 
