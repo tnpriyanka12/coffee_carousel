@@ -13,9 +13,15 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true,
   format: { with: EMAIL_FORMAT , message: "Please provide valid email" }
+
   validates :name,  presence: true, uniqueness: true, length: { minimum: 2 }
+
   validates :password,
   length: { in: 6..20 },
-  format: { with: PASSWORD_FORMAT , message: "Need atleast 8 characters, 1 digit, 1 Uppercase Letter and 1 Lower case letter" },
+  format: { with: PASSWORD_FORMAT  },
   confirmation: true
+  validates_presence_of :password, on: :create
+
+
+  validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "Phone Number format: 000-000-0000" }
 end
