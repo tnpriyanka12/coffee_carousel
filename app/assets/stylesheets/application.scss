@@ -25,6 +25,9 @@
      line-height: 1.25;
  }
 
+.navbar{
+  background-color: #2d1e19;
+}
  .carousel-caption {
      text-shadow: none !important;
      color: #474545 !important;
@@ -64,4 +67,8 @@ img {
 .user-image{
   height: 100px;
   width: 100px;
+}
+
+.drink-heading{
+  display: inline-block;
 }

@@ -1,33 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @drink.name %>
-</p>
 
-<p>
-  <strong>Milk:</strong>
-  <%= @drink.milk %>
-</p>
+<h1 class="drink-heading"> <%= @drink.name %> </h1>
+<span ><%= link_to 'Edit', edit_drink_path(@drink) %></span>
 
-<p>
-  <strong>Water:</strong>
-  <%= @drink.espresso %>
-</p>
+  <br><%= image_tag @drink.picture ,class:"img-thumbnail"%>
 
-<p>
-  <strong>Froth:</strong>
-  <%= @drink.froth %>
-</p>
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Espresso
+    <span class="badge badge-primary badge-pill"><%= @drink.espresso %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Milk
+    <span class="badge badge-primary badge-pill"><%= @drink.milk %></span>
+  </li>
+  <li class="list-group-item flex justify-content-between align-items-center">
+    Froth
+    <span class="badge badge-primary badge-pill"><%= @drink.froth %></span>
+  </li>
+</ul>
 
-<p>
-  <%= image_tag @drink.picture %>
-</p>
-
-
-<p>
-  <strong>Description:</strong>
-  <%= @drink.description %>
-</p>
-
-<%= link_to 'Edit', edit_drink_path(@drink) %>
+<div class="card text-white bg-secondary mb-3" style="max-width: 100rem;">
+  <div class="card-header">Description</div>
+  <div class="card-body">
+    <p class="card-text"><%= @drink.description %></p>
+  </div>
+</div>

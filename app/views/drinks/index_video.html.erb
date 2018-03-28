@@ -20,7 +20,7 @@
     <% @drinks.each do |drink| %>
       <% if !(@drinks.first == drink) %>
         <div class="item">
-          <h1><%= drink.name %><h1>
+          <h1><%= drink.name %></h1>
 
           <iframe class="drinksvideo" width="560" height="315" src="https://www.youtube.com/embed/<%=drink.video_id%>?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <div class="carousel-caption">
