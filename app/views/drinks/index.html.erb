@@ -10,7 +10,8 @@
       <div class="item active">
         <h1><%= @drinks.first.name %></h1>
 
-        <img class="img-responsive center-block" src="<%= @drinks.first.picture %>" alt="">
+        <a href="<%= drink_path(@drinks[0]) %>"><img class="img-responsive center-block" src="<%= @drinks.first.picture %>" alt=""></a>
+
         <div class="carousel-caption">
         <%= @drinks.first.description %>
         </div>
@@ -21,7 +22,7 @@
         <div class="item">
           <h1><%= drink.name %></h1>
 
-          <img class="img-responsive center-block" src="<%= drink.picture %>" alt="">
+          <a href="<%= drink_path(drink) %>"><img class="img-responsive center-block" src="<%= drink.picture %>" alt=""></a>
           <div class="carousel-caption">
             <%= drink.description %>
           </div>

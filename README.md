@@ -25,7 +25,7 @@ Password: Chicken1234
 
 ### Requirements done
 
- -> BootStrap3 framework
+ -> BootStrap3 framework - responsive - for mobiles, best view is sideways
  -> Sliders -> Photos and Videos
  -> Validation -> Tried to validate as much as I can
 (Used gem client_side_validations)
@@ -45,3 +45,4 @@ Password: Chicken1234
 -> Password confirmation: Website doesnt wait until u have finished typing password confirmation. Shows error until the right password is typed in confirmation
 -> Issues with assest pipeline -> somewhat fixed
 -> Few issues with heroku (Bootstrap related, assets path related, )
+-> Video not autoplayed on heroku
