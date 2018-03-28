@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_logged_in, except: [:new, :create]
+  # before_action :check_if_logged_in, except: [:new, :create]
   #
-  before_action :check_user_id, only: [:index]
+  before_action :check_user_id, only: [:show]
 
   # find out which user's page it is
   # compare the user's page with current user
@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    flash[:error] = "You may not view this page."
+    redirect_to login_path
   end
 
   # GET /users/1
@@ -33,7 +35,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -76,10 +77,17 @@ class UsersController < ApplicationController
     end
 
     def check_user_id
-      # @user = User.find params[:id]
-      unless @current_user == @user
+      if !@current_user
         flash[:error] = "You must be authorised to view this page."
-        redirect_to @current_user
+        redirect_to login_path
+      else
+        @user = User.find params[:id]
+        if @current_user == @user
+          redirect_to @user
+        else
+          flash[:error] = "You cannot view this page."
+          redirect_to login_path
+        end
       end
     end
 

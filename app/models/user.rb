@@ -23,5 +23,5 @@ class User < ApplicationRecord
   validates_presence_of :password, on: :create
 
 
-  validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "Phone Number format: 000-000-0000" }
+  validates :phone_number,  presence: true, uniqueness: true, length: { minimum: 10 }
 end
