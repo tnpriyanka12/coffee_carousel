@@ -7,9 +7,16 @@ class DrinksController < ApplicationController
     @drinks = Drink.all
     if !@current_user
       redirect_to login_path
-    end 
+    end
   end
 
+  def index_video
+    @drinks = Drink.all
+    if !@current_user
+      redirect_to login_path
+    end
+  end
+  
   # GET /drinks/1
   # GET /drinks/1.json
   def show
