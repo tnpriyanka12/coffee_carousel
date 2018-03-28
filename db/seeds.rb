@@ -1,9 +1,9 @@
 User.destroy_all
 
-u1 = User.create name: "user1", email:"user1@mail.com", phone_number: "1234567891" description:"Likes Coffee!" , password: "Chicken1234"
-u2 = User.create name: "user2", email:"user2@mail.com", phone_number: "1234567890" description:"Adores Coffee!!" , password: "Chicken1234"
-u3 = User.create name: "user3", email:"user3@mail.com", phone_number: "1234567897" description:"Loves Coffee!!!!" , password: "Chicken1234"
-u4 = User.create name: "user4", email:"user4@mail.com", phone_number: "1234567899" description:"Lives for Coffee!!!!!!" , password: "Chicken1234"
+u1 = User.create name: "user1", email:"user1@mail.com", phone_number: "1234567891", description:"Likes Coffee!" , password: "Chicken1234"
+u2 = User.create name: "user2", email:"user2@mail.com", phone_number: "1234567890", description:"Adores Coffee!!" , password: "Chicken1234"
+u3 = User.create name: "user3", email:"user3@mail.com", phone_number: "1234567897", description:"Loves Coffee!!!!" , password: "Chicken1234"
+u4 = User.create name: "user4", email:"user4@mail.com", phone_number: "1234567899", description:"Lives for Coffee!!!!!!" , password: "Chicken1234"
 puts "Users - #{User.all.length} "
 
 Drink.destroy_all
