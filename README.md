@@ -1,6 +1,6 @@
 # README
 
-Live Site Link:
+Live Site Link: https://iespresso.herokuapp.com/
 
 Fork:
 # Fork this repository
@@ -44,3 +44,4 @@ Mixture of pictures and videos in slides, just a simple File check and insert pr
 -> A user can see other users profile -> Cant get around this
 -> Password confirmation: Website doesnt wait until u have finished typing password confirmation. Shows error until the right password is typed in confirmation
 -> Issues with assest pipeline -> somewhat fixed
+-> Few issues with heroku (Bootstrap related, assets path related, )
