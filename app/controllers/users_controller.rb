@@ -77,18 +77,20 @@ class UsersController < ApplicationController
     end
 
     def check_user_id
-      if !@current_user
-        flash[:error] = "You must be authorised to view this page."
-        redirect_to login_path
-      else
-        @user = User.find params[:id]
-        if @current_user == @user
-          redirect_to @user
-        else
-          flash[:error] = "You cannot view this page."
-          redirect_to login_path
-        end
-      end
+      # raise 'hell'
+
+      # if !@current_user
+      #   flash[:error] = "You must be authorised to view this page."
+      #   redirect_to login_path
+      # else
+      #   @user = User.find params[:id]
+      #   # if @current_user == @user
+      #   #   redirect_to @user
+      #   # else
+      #   #   flash[:error] = "You must be authorised to view this page."
+      #   #   redirect_to login_path
+      #   # end
+      # end
     end
 
     def user_params
