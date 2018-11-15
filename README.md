@@ -1,6 +1,9 @@
 # README
 
-Live Site Link: https://iespresso.herokuapp.com/
+# Description 
+Carousel - Pictures and Videos in Carousel, Login and Authentication, User contributuions. 
+
+# Live Site Link: https://iespresso.herokuapp.com/
 
 #Fork:
  Fork this repository
